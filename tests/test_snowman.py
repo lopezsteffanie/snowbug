@@ -15,7 +15,7 @@ def make_std_input(guesses):
 
 
 # Tests ########################################################################
-
+@pytest.mark.skip()
 def test_build_word_dict_builds_guessed_letter_data():
     # Arrange
     word = "snowman"
@@ -33,7 +33,7 @@ def test_build_word_dict_builds_guessed_letter_data():
         "a": False,
     }
 
-
+# @pytest.mark.skip()
 def test_build_word_dict_builds_guessed_letter_data_excluding_non_letter_characters():
     # Arrange
     word = "ad hoc"
@@ -50,7 +50,7 @@ def test_build_word_dict_builds_guessed_letter_data_excluding_non_letter_charact
         "c": False,
     }
 
-
+@pytest.mark.skip()
 def test_is_word_guessed_detects_not_guessed_word():
     # Arrange
     word_dict = {
@@ -68,7 +68,7 @@ def test_is_word_guessed_detects_not_guessed_word():
     # Assert
     assert not is_guessed
 
-
+@pytest.mark.skip()
 def test_is_word_guessed_detects_guessed_word():
     # Arrange
     word_dict = {
@@ -86,7 +86,7 @@ def test_is_word_guessed_detects_guessed_word():
     # Assert
     assert is_guessed
 
-
+@pytest.mark.skip()
 def test_build_game_board_builds_empty_word_with_only_alpha():
     # Arrange
     word = "snowman"
@@ -105,7 +105,7 @@ def test_build_game_board_builds_empty_word_with_only_alpha():
     # Assert
     assert board == "_ _ _ _ _ _ _"
 
-
+@pytest.mark.skip()
 def test_build_game_board_builds_complete_word_with_only_alpha():
     # Arrange
     word = "snowman"
@@ -124,7 +124,7 @@ def test_build_game_board_builds_complete_word_with_only_alpha():
     # Assert
     assert board == "s n o w m a n"
 
-
+@pytest.mark.skip()
 def test_build_game_board_builds_empty_word_with_non_alpha():
     # Arrange
     word = "ad hoc"
@@ -142,7 +142,7 @@ def test_build_game_board_builds_empty_word_with_non_alpha():
     # Assert
     assert board == "_ _   _ _ _"
 
-
+@pytest.mark.skip()
 def test_build_game_board_builds_complete_word_with_non_alpha():
     # Arrange
     word = "ad hoc"
@@ -160,7 +160,7 @@ def test_build_game_board_builds_complete_word_with_non_alpha():
     # Assert
     assert board == "a d   h o c"
 
-
+@pytest.mark.skip()
 def test_build_snowman_graphic_builds_empty_snowman():
     # Arrange
     wrong_guesses = 0
@@ -171,7 +171,7 @@ def test_build_snowman_graphic_builds_empty_snowman():
     # Assert
     assert snowman_image == ""
 
-
+@pytest.mark.skip()
 def test_build_snowman_graphic_builds_full_snowman():
     # Arrange
     wrong_guesses = 7
@@ -190,7 +190,7 @@ def test_build_snowman_graphic_builds_full_snowman():
         '-----------'
     )
 
-
+@pytest.mark.skip()
 def test_wrong_guesses_are_in_alphabetical_order_when_guessed_in_order():
     # Arrange
     wrong_letters = []
@@ -206,7 +206,7 @@ def test_wrong_guesses_are_in_alphabetical_order_when_guessed_in_order():
     # Assert
     assert wrong_letters == ['a', 'b', 'c', 'd', 'e', 'f']
 
-
+@pytest.mark.skip()
 def test_wrong_guesses_are_in_alphabetical_order_when_guessed_out_of_order():
     # Arrange
     wrong_letters = []
@@ -224,7 +224,7 @@ def test_wrong_guesses_are_in_alphabetical_order_when_guessed_out_of_order():
 
 
 # The following four tests are equivalent to the tests from the replit version #
-
+@pytest.mark.skip()
 def test_prints_success_message_if_all_letters_guessed(capsys, monkeypatch):
     # Arrange (prepare to simulate user input)
     input_letters = "namwons"
@@ -237,7 +237,7 @@ def test_prints_success_message_if_all_letters_guessed(capsys, monkeypatch):
     captured = capsys.readouterr()
     assert "you win" in captured.out.lower()
 
-
+@pytest.mark.skip()
 def test_prints_success_message_with_3_wrong_guesses_and_the_rest_right(capsys, monkeypatch):
     # Arrange (prepare to simulate user input)
     input_letters = "snbowmaqvn"
@@ -251,7 +251,7 @@ def test_prints_success_message_with_3_wrong_guesses_and_the_rest_right(capsys, 
     assert "you win" in captured.out.lower()
     assert "sorry, you lose!" not in captured.out.lower()
 
-
+@pytest.mark.skip()
 def test_prints_failure_message_with_7_straight_wrong_guesses(capsys, monkeypatch):
     # Arrange (prepare to simulate user input)
     input_letters = "bcpzqvx"
@@ -266,7 +266,7 @@ def test_prints_failure_message_with_7_straight_wrong_guesses(capsys, monkeypatc
     assert "sorry, you lose!" in captured.out.lower()
     assert "the word was snowman" in captured.out.lower()
 
-
+@pytest.mark.skip()
 def test_prints_failure_message_with_7_wrong_guesses_and_two_right(capsys, monkeypatch):
     # Arrange (prepare to simulate user input)
     input_letters = "sbcpnzqvx"
@@ -283,7 +283,7 @@ def test_prints_failure_message_with_7_wrong_guesses_and_two_right(capsys, monke
 
 
 # A new simulated game scenario ################################################
-
+@pytest.mark.skip()
 def test_prints_success_message_if_all_letters_with_non_alpha_symbols_guessed(capsys, monkeypatch):
     # Arrange (prepare to simulate user input)
     input_letters = "nibtul"
